@@ -5,12 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie-Sraech</title>
+    <style>
+        button{
+            padding: 10px;
+            color: yellow;
+            background-color: black;
+        }
+        input{
+            width: 250px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Movie Search Engine</h1>
 
     <input type="text" id="movie" placeholder="Search for Movie details">
-    <button onclick="getMovieDetails()" >Get Details</button>
+    <button onclick="getMovieDetails()" >Get Movie Details</button>
     <div id="data"></div>
 </body>
 </html>
