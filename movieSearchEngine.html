@@ -32,30 +32,30 @@ async function getMovieDetails(){
 
     let data = await res.json();
     console.log(data) ;
-    //getMovieDetails(data);
+    showMovieDetails(data);
 
 }
 
-// function getMovieDetails(moviedetail){
-//     parent.innerText = null;
+function showMovieDetails(moviedetail){
+    parent.innerText = null;
 
 
-//     let Title = document.createElement("p");
-//     Title.innerText = moviedetail.Title;
+    let Title = document.createElement("p");
+    Title.innerText = moviedetail.Title;
 
-//     let rating = document.createElement("p");
-//     rating.innerText = moviedetail.imdbRating;
+    let rating = document.createElement("p");
+    rating.innerText = moviedetail.imdbRating;
 
-//     let country = document.createElement("p");
-//     country.innerText = moviedetail.Country;
+    let country = document.createElement("p");
+    country.innerText = moviedetail.Country;
 
-//     let director = document.createElement("p");
-//     director.innerText = moviedetail.Director;
+    let director = document.createElement("p");
+    director.innerText = moviedetail.Director;
 
-//     let writer = document.createElement("p");
-//     writer.innerText = moviedetail.Writer;
+    let writer = document.createElement("p");
+    writer.innerText = moviedetail.Writer;
 
-//     parent.append(Title, rating,country,director,writer);
-// }
+    parent.append(Title, rating,country,director,writer);
+}
 
 </script>
