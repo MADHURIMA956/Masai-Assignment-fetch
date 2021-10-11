@@ -41,19 +41,19 @@ function showMovieDetails(moviedetail){
 
 
     let Title = document.createElement("p");
-    Title.innerText = moviedetail.Title;
-
+    Title.innerText = "Movie Title :"+ " " +  moviedetail.Title;
+ 
     let rating = document.createElement("p");
-    rating.innerText = moviedetail.imdbRating;
+    rating.innerText =  "Movie rating :"+ " " +  moviedetail.imdbRating;
 
     let country = document.createElement("p");
-    country.innerText = moviedetail.Country;
+    country.innerText = "Origin Of The Movie:"+ " " +  moviedetail.Country;
 
     let director = document.createElement("p");
-    director.innerText = moviedetail.Director;
+    director.innerText = "Movie director :"+ " " + moviedetail.Director;
 
     let writer = document.createElement("p");
-    writer.innerText = moviedetail.Writer;
+    writer.innerText = " Movie writer :"+ " " + moviedetail.Writer;
 
     parent.append(Title, rating,country,director,writer);
 }
