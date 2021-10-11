@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie-Sraech</title>
+    <style>
+        /* button{
+            padding: 10px;
+            color: yellow;
+            background-color: black;
+        }*/
+        input{
+            width: 300px;
+            padding: 10px;
+        } 
+
+        button{
+         padding: 10px;
+         background-color: yellow;
+         color: black;
+         width: 238px;
+     }
+     #searchbtn{
+        width: 150px;
+     }
+     #btn_style{
+         padding: 10px;
+     }
+     #nav{
+       display: flex;
+       background-color: black;
+       position:fixed;
+       top: 0;
+       width: 100%;
+     }
+     #nav > div {
+       flex-direction: row;
+     }
+     #nav > div:nth-child(1) {
+        padding-left: 10px;
+     }
+     #nav > div:nth-child(2) {
+       flex-grow: 1;
+      margin-top: 20px;
+      margin-left: 10%;
+      
+     }
+     .nav_btn{
+        padding: 10px;
+         background-color: yellow;
+         color: black;
+         width: 100px;
+         margin-right: 10px;
+         margin-top: 20px;
+     }
+     h1{
+         color: yellow;
+     }
+     #data{
+         position: absolute;
+         top:100px;
+     }
+
+    </style>
+</head>
+<body>
+    
+
+    <div id="nav">
+        <div><h1>Movie Treasures</h1></div>
+        <div><input type="text" id="movie" placeholder="Search for Movie details">
+            <button id="searchbtn" onclick="getMovieDetails()" >Get Movie Details</button>
+        </div>
+        <div><a href="#"><button class="nav_btn"> Home</button></a></div>
+       
+        <div><a href="#"><button class="nav_btn">Log-in</button></a></div>
+        <div><a href="#"><button class="nav_btn">Sign-up</button></a></div>
+    </div>
+    <div id="data"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+<script>
+
+let parent = document.getElementById("data");
+
+async function getMovieDetails(){
+
+     let movie = document.getElementById("movie").value ;
+
+    let res = await fetch(`https://www.omdbapi.com/?T=${movie}&apikey=fa8fc925`);
+
+    let data = await res.json();
+    console.log(data) ;
+    showMovieDetails(data);
+
+}
+
+function showMovieDetails(moviedetail){
+    parent.innerText = null;
+
+
+    let Title = document.createElement("p");
+    Title.innerText = "Movie Title :"+ " " +  moviedetail.Title;
+ 
+    let rating = document.createElement("p");
+    rating.innerText =  "Movie rating :"+ " " +  moviedetail.imdbRating;
+
+    let country = document.createElement("p");
+    country.innerText = "Origin Of The Movie:"+ " " +  moviedetail.Country;
+
+    let director = document.createElement("p");
+    director.innerText = "Movie director :"+ " " + moviedetail.Director;
+
+    let writer = document.createElement("p");
+    writer.innerText = " Movie writer :"+ " " + moviedetail.Writer;
+
+    parent.append(Title, rating,country,director,writer);
+}
+
+</script>
