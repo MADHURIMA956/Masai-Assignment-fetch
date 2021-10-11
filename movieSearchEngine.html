@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie-Sraech</title>
+</head>
+<body>
+    <h1>Movie Search Engine</h1>
+
+    <input type="text" id="movie" placeholder="Search for Movie details">
+    <button onclick="getMovieDetails()" >Get Details</button>
+    <div id="data"></div>
+</body>
+</html>
+
+
+
+
+
+
+<script>
+
+let parent = document.getElementById("data");
+
+async function getMovieDetails(){
+
+     let movie = document.getElementById("movie").value ;
+
+    let res = await fetch(`https://www.omdbapi.com/?T=${movie}&apikey=fa8fc925`);
+
+    let data = await res.json();
+    console.log(data) ;
+    //getMovieDetails(data);
+
+}
+
+// function getMovieDetails(moviedetail){
+//     parent.innerText = null;
+
+
+//     let Title = document.createElement("p");
+//     Title.innerText = moviedetail.Title;
+
+//     let rating = document.createElement("p");
+//     rating.innerText = moviedetail.imdbRating;
+
+//     let country = document.createElement("p");
+//     country.innerText = moviedetail.Country;
+
+//     let director = document.createElement("p");
+//     director.innerText = moviedetail.Director;
+
+//     let writer = document.createElement("p");
+//     writer.innerText = moviedetail.Writer;
+
+//     parent.append(Title, rating,country,director,writer);
+// }
+
+</script>
