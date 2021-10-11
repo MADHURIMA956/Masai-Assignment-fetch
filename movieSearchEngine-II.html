@@ -32,6 +32,7 @@
        display: flex;
        background-color: black;
        position:fixed;
+       z-index: 1;
        top: 0;
        width: 100%;
      }
@@ -59,10 +60,22 @@
          color: yellow;
      }
      #data{
-         position: absolute;
-         top:100px;
+        position: absolute;
+        border: 1px solid red;
+         top:200px;
+         margin-left: 30% ;
+      
      }
-
+     img{
+         width: 100%;
+     }
+     h2{
+         text-align: center;
+         background-color: wheat;
+     }
+     #data > div {
+         padding: 20px;
+     }
     </style>
 </head>
 <body>
@@ -95,6 +108,7 @@ let parent = document.getElementById("data");
 async function getMovieDetails(){
 
      let movie = document.getElementById("movie").value ;
+     document.getElementById("movie").value ='';
 
     let res = await fetch(`https://www.omdbapi.com/?T=${movie}&apikey=fa8fc925`);
 
@@ -107,9 +121,13 @@ async function getMovieDetails(){
 function showMovieDetails(moviedetail){
     parent.innerText = null;
 
+    let div1 = document.createElement("div");
 
-    let Title = document.createElement("p");
-    Title.innerText = "Movie Title :"+ " " +  moviedetail.Title;
+    let img = document.createElement("img");
+    img.src = moviedetail.Poster
+
+    let Title = document.createElement("h2");
+    Title.innerText =  moviedetail.Title;
  
     let rating = document.createElement("p");
     rating.innerText =  "Movie rating :"+ " " +  moviedetail.imdbRating;
@@ -120,10 +138,15 @@ function showMovieDetails(moviedetail){
     let director = document.createElement("p");
     director.innerText = "Movie director :"+ " " + moviedetail.Director;
 
+    
+    let released = document.createElement("p");
+    released.innerText = "Movie Released Date :"+ " " + moviedetail.Released;
+
     let writer = document.createElement("p");
     writer.innerText = " Movie writer :"+ " " + moviedetail.Writer;
 
-    parent.append(Title, rating,country,director,writer);
+    div1.append(img,Title, rating,released,country,director,writer)
+    parent.append(div1);
 }
 
 </script>
