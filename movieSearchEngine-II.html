@@ -61,10 +61,10 @@
      }
      #data{
         position: absolute;
-        border: 1px solid red;
+        border:  grey;
          top:200px;
          margin-left: 30% ;
-      
+        box-shadow: grey;
      }
      img{
          width: 100%;
@@ -111,12 +111,19 @@ async function getMovieDetails(){
      document.getElementById("movie").value ='';
 
     let res = await fetch(`https://www.omdbapi.com/?T=${movie}&apikey=fa8fc925`);
+    if ( !res.ok){
+        const message = `An error has occured : ${res.status}`;
+        throw new console.error(message);
+    }
 
     let data = await res.json();
     console.log(data) ;
     showMovieDetails(data);
 
 }
+getMovieDetails().catch(error => {
+    console.error(message);
+});
 
 function showMovieDetails(moviedetail){
     parent.innerText = null;
