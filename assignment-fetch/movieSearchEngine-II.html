@@ -111,7 +111,7 @@ async function getMovieDetails(){
      document.getElementById("movie").value ='';
      try{
    
-        let res = await fetch(`https://www.omdbapi.com/?t=${movie}&apikey=fa8fc925`);
+        let res = await fetch(`https://www.omdbapi.com/?s=${movie}&apikey=fa8fc925`);
    
         let data = await res.json();
 
