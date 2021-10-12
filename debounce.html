@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+    <style>
+        input{
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #movies{
+            height: 200px;
+            width: 330px;
+            overflow: scroll;
+            border-top: none;
+        }
+        #cont{
+            margin: 5% 30%;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+    <div id="cont">
+        <input oninput="debounce(main,1000)" type="text" id="movie" placeholder="Enter movie name">
+
+        <div id="movies"></div>
+    </div>
+
+<script>
+
+// search movies
+
+let movies_div = document.getElementById("movies")
+
+var  timerId;
+
+async function searchMovies(movie_name){
+
+    try{
+        let res = await fetch(`https://www.omdbapi.com/?s=${movie_name}&apikey=fa8fc925`);
+
+        let data = await res.json();
+
+        return data;
+    }catch(e){
+        console.log(e);
+    }
+ 
+}
+
+//searchMovies("pk")
+
+function appendMovies(movies){
+
+    if(movies === undefined){
+        return false
+    }
+
+
+    movies_div.innerHTML = null;
+
+    movies.forEach(function(movie){
+
+        let p = document.createElement('p')
+
+        p.innerText = movie.Title;
+
+        movies_div.append(p);
+    });
+
+}
+
+
+async function main(){
+    let name = document.getElementById('movie').value;
+
+    // get search movies
+
+    if(name.length < 3){
+        return false;
+    }
+
+  let res =  await searchMovies(name);
+
+
+  let movies_data = res.Search;
+  console.log(movies_data);
+
+  appendMovies(movies_data);
+
+  console.log(res);
+  
+}
+
+function debounce(func , delay) {
+    
+    // func = main()
+    // ave - setTimeout - func - main() - searchMovies("ave")
+    //aven - clear the prev timeout setTimeout - func - main() - searchMovies("aven")
+
+    if (timerId){
+        clearTimeout(timerId);
+    }
+   
+
+  timerId =  setTimeout(function(){
+
+        func();
+
+    },delay);
+
+}
+
+
+</script>
