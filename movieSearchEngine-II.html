@@ -106,24 +106,25 @@
 let parent = document.getElementById("data");
 
 async function getMovieDetails(){
-
+   
      let movie = document.getElementById("movie").value ;
      document.getElementById("movie").value ='';
+     try{
+   
+        let res = await fetch(`https://www.omdbapi.com/?T=${movie}&apikey=fa8fc925`);
+   
+        let data = await res.json();
 
-    let res = await fetch(`https://www.omdbapi.com/?T=${movie}&apikey=fa8fc925`);
-    // if ( !res.ok){
-    //     const message = `An error has occured : ${res.status}`;
-    //     throw new console.error(message);
-    // }
-
-    let data = await res.json();
-    console.log(data) ;
-    showMovieDetails(data);
+        console.log(data) ;
+        showMovieDetails(data);
+     }catch(e){
+         let message = `${movie} is not found`;
+        alert(message);
+     }
+  
 
 }
-// getMovieDetails().catch(error => {
-//     console.error(message);
-// });
+
 
 function showMovieDetails(moviedetail){
     parent.innerText = null;
