@@ -111,11 +111,11 @@ async function getMovieDetails(){
      document.getElementById("movie").value ='';
      try{
    
-        let res = await fetch(`https://www.omdbapi.com/?s=${movie}&apikey=fa8fc925`);
+        let res = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=d9aebd3f8b068d96b35616ac7eb552a4`);
    
         let data = await res.json();
 
-        console.log(data) ;
+        console.log(data.data) ;
         showMovieDetails(data);
      }catch(e){
          let message = `${movie} is not found`;
