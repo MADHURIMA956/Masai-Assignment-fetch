@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT</title>
+    <script src="https://kit.fontawesome.com/c5df6b2bbe.js" crossorigin="anonymous"></script>
+    <style>
+        div > div{
+            border: 1px solid red;
+        }
+        #navbar{
+            display: flex;
+            height: 70px;
+           
+        }
+        #navbar > div:nth-child(1){
+            display: flex;
+            width: 20%;
+        }
+        #navbar > div:nth-child(1) > div{
+           
+            width: 30%;
+        }
+        #navbar > div:nth-child(2){
+            flex-grow: 1;
+        }
+        #navbar > div:nth-child(3){
+           display: flex;
+           width: 20%;
+        }
+        #navbar > div:nth-child(3) > div{
+           display: flex;
+           width: 25%;
+           justify-content: center;
+          padding-top: 25px;
+        }
+        #utubeimg{
+            width: 150px;
+            height: 30px;
+        }
+        #navbar > div:nth-child(1) > div:nth-child(2){
+          padding-top : 15px;
+          width: 70%;
+        }
+        #search_btn{
+            width: 80%;
+            height: 40px;
+            margin-top: 15px;
+            margin-left: 50px;
+            margin-right: 20px;
+        }
+        #main{
+            display: flex;
+            height: 1000px;
+        }
+        #main > div:nth-child(1){
+           width: 20%;
+        }
+        #main > div:nth-child(2){
+           flex-grow: 1;
+        }
+        #container {
+          display: flex;
+          flex-direction: column; 
+        }
+        #container >div:nth-child(1) {
+         height: 40px;
+        }
+        #container >div:nth-child(2) {
+         flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div>
+            <div></div>
+            <div>
+                <img id="utubeimg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png" alt="">
+            </div>
+        </div>
+        <div><input id="search_btn" type="search"></div>
+        <div>
+            <div><i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
+            <div><i class="fa fa-th" aria-hidden="true"></i></div>
+            <div><i class="fa fa-bell-o" aria-hidden="true"></i></div>
+            <div><i class="fa fa-user" aria-hidden="true"></i></div>
+        </div>
+    </div>
+    <div id="main">
+        <div></div>
+        <div id="container">
+            <div></div>
+            <div id="main_div">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
