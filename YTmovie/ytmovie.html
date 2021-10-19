@@ -145,12 +145,13 @@
           padding-left: 10px;
        }
          #maindetail_div{
-            position: relative;
+             display: none;
+            position: relative ;
             width: 100%;
             top:12%;
         }
            #main_div{
-            position: relative;
+            position: absolute;
             width: 100%;
             left: 18%;
             top: 12%;
@@ -161,37 +162,13 @@
         }
         .vdoApi_div{
             display: flex;
-            /* flex-direction: column; */
-            gap: 2%;
+            flex-direction: column;
+           border: 1px solid red;
             width: 100%;
             margin-bottom: 20px;
             cursor: pointer;
         }
-        .vdoApi_title{
-            word-break: break-word;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            line-height: 21px;
-            max-height: 42px;
-            -webkit-line-clamp: 3;
-            /* number of lines to show */
-            -webkit-box-orient: vertical;
-        }
-   
-        .titleWrapper{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .channel_titleDiv{
-            display: flex;
-            align-items: center;
-            margin: 8px 0;
-            color: rgb(105, 105, 105);
-            gap: 8px;
-        }
+          
     </style>
 </head>
 <body>
@@ -242,7 +219,7 @@
                 <button class="btn_upper">Music</button>
             </div>
             <div id="main_div"></div>
-            <!-- <div id="maindetail_div"></div> -->
+            <div id="maindetail_div"></div>
         </div>
     </div>
 </body>
@@ -257,10 +234,10 @@ let parent = document.getElementById('main_div')
     try{
         let res = await fetch('https://youtube.googleapis.com/youtube/v3/search?type=video&key=AIzaSyDdzweW9-us5ypGorA2oGp-0y8j7bPPuIs&maxResults=20&safeSearch=strict&videoCaption=closedCaption&part=snippet&chart=mostPopular&regionCode=IN')
 
-        console.log(res);
+        //console.log(res);
         let data = await res.json();
 
-        console.log(data.items);
+        //console.log(data.items);
         appendVideos(data.items);
 
     }catch(e){
@@ -275,22 +252,16 @@ let parent = document.getElementById('main_div')
         parent.innerHTML = null;
 
         video_data.forEach( ({ 
-            id:{
-                videoId
-            },
-            snippit:{
-                title
-            },
-            snippit:{
-                channelTitle
-            }  })=>{
+            id:{ videoId },
+            snippet:{ title ,channelTitle },
+            })=>{
             //console.log(videoId);
 
             let div = document.createElement("div");
             div.setAttribute('class','vdoApi_div')
 
             let inner_div = document.createElement("div");
-            inner_div.innerText =`<iframe width="200px" height="200px" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            inner_div.innerText =`<iframe width="50px" height="100px" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
             let titleWrapper = document.createElement("div");
             titleWrapper.setAttribute("class", "titleWrapper");
@@ -302,7 +273,7 @@ let parent = document.getElementById('main_div')
 
             
             let title1 = document.createElement('p');
-            title1.innerText = video_data.title;
+            title1.innerText =title;
             
           
 
@@ -310,12 +281,13 @@ let parent = document.getElementById('main_div')
             channelTitle_div.setAttribute("class", "channel_titleDiv");
 
             let channelTitle1 = document.createElement('p')
-            channelTitle1.innerText = video_data.channelTitle;
+            channelTitle1.innerText = channelTitle;
 
             let img = document.createElement('img');
             img.src = "https://img.icons8.com/ios-glyphs/20/000000/checked--v1.png"
 
             div_title.append(title1);
+            console.log(title ,channelTitle)
 
             channelTitle_div.append(channelTitle1,img);
 
@@ -325,8 +297,6 @@ let parent = document.getElementById('main_div')
 
             parent.append(div)
             
-          
-            
         });
 
     }
@@ -335,7 +305,7 @@ let parent = document.getElementById('main_div')
 <script>
 
    
-let videos = document.getElementById('main_div')
+let videos = document.getElementById('maindetail_div')
 
     async function searchVideos(){
 
@@ -366,6 +336,8 @@ let videos = document.getElementById('main_div')
             div.style.marginTop = "20px";
             
             videos.append(div);
+            videos.style.display = "block";
+            parent.style.display = "none"
             
         });
 
