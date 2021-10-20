@@ -31,6 +31,7 @@
         }
         #navbar > div:nth-child(2){
             flex-grow: 1;
+            margin-bottom: 2%;
         }
         #navbar > div:nth-child(3){
            display: flex;
@@ -65,6 +66,7 @@
             outline: none;
         }
         #search{
+            cursor: pointer;
             width: 10%;
             height: 44px;
             margin-top: 15px;
@@ -144,20 +146,21 @@
           padding-top: 10px;
           padding-left: 10px;
        }
-         #maindetail_div{
+         /* #maindetail_div{
              display: none;
             position: relative ;
             width: 100%;
             top:12%;
-        }
+        } */
            #main_div{
-            position: absolute;
+            position: relative;
             width: 100%;
-            left: 18%;
-            top: 12%;
+            left: 11%;
+            top: 11%;
+            z-index: 1;
             display: grid;
             grid-gap: 10px;
-            grid-template-columns: repeat(4,20%);
+            grid-template-columns: repeat(4,15%);
            justify-content: space-evenly;
         }
         .vdoApi_div{
@@ -168,7 +171,15 @@
             margin-bottom: 20px;
             cursor: pointer;
         }
-          
+        .sizeIcon{
+            cursor: pointer;
+            font-size: 22px;
+        }
+        .vdoIcon{
+            cursor: pointer;
+           width: 25px;
+           height: 25px;
+        }
     </style>
 </head>
 <body>
@@ -180,12 +191,13 @@
             </div>
         </div>
         <div><input id="query" type="text" placeholder="Search"><button id="search" onclick="searchVideos()"><i class="fa fa-search" aria-hidden="true"></i></button>
-            <img style="background-color: honeydew; border-radius: 50%;margin-top: 15px;" src="https://img.icons8.com/material-sharp/25/000000/microphone--v1.png"/></div>
+   <img class="vdoIcon" src="https://img.icons8.com/material-sharp/25/000000/microphone--v1.png"/>
+        </div>
         <div>
-            <div><i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
-            <div><i class="fa fa-th" aria-hidden="true"></i></div>
-            <div><i class="fa fa-bell-o" aria-hidden="true"></i></div>
-            <div><i class="fa fa-user" aria-hidden="true"></i></div>
+            <div> <img  class="vdoIcon" src="https://img.icons8.com/ios/25/000000/video-call.png"/></div>
+            <div><i class="sizeIcon fa fa-th" aria-hidden="true"></i></div>
+            <div><i class="sizeIcon fa fa-bell-o" aria-hidden="true"></i></div>
+            <div><i class="sizeIcon fa fa-user" aria-hidden="true"></i></div>
         </div>
     </div>
     <div id="main">
@@ -219,7 +231,7 @@
                 <button class="btn_upper">Music</button>
             </div>
             <div id="main_div"></div>
-            <div id="maindetail_div"></div>
+            <!-- <div id="maindetail_div"></div> -->
         </div>
     </div>
 </body>
@@ -305,7 +317,7 @@ let parent = document.getElementById('main_div')
 <script>
 
    
-let videos = document.getElementById('maindetail_div')
+let videos = document.getElementById('main_div')
 
     async function searchVideos(){
 
@@ -336,8 +348,8 @@ let videos = document.getElementById('maindetail_div')
             div.style.marginTop = "20px";
             
             videos.append(div);
-            videos.style.display = "block";
-            parent.style.display = "none"
+            // videos.style.display = "block";
+            // parent.style.display = "none"
             
         });
 
