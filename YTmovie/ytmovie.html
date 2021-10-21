@@ -246,10 +246,10 @@ let parent = document.getElementById('main_div')
     try{
         let res = await fetch('https://youtube.googleapis.com/youtube/v3/search?type=video&key=AIzaSyDdzweW9-us5ypGorA2oGp-0y8j7bPPuIs&maxResults=20&safeSearch=strict&videoCaption=closedCaption&part=snippet&chart=mostPopular&regionCode=IN')
 
-        //console.log(res);
+        console.log(res);
         let data = await res.json();
 
-        //console.log(data.items);
+        console.log(data.items);
         appendVideos(data.items);
 
     }catch(e){
@@ -353,7 +353,7 @@ let videos = document.getElementById('main_div')
             
         });
 
-        
+        // 
     }
 
 </script>
