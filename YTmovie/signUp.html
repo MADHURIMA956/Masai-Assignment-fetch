@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #signup-form{
+           width: 20px;
+        }
+        input{
+            margin-top: 5px;
+        }
+
+        form{
+            width: 10%;
+        }
+        input{
+            margin: 15%;
+            width: 250px;
+            height: 30px;
+        }
+        body{
+            background-color: white;
+        }
+        #signup{
+            background-color: red;
+            max-width: 900px;
+            min-height: 400px;
+            margin: 100px 300px;
+            padding-left: 250px;
+            padding-top: 40px;
+        }
+        #sign{
+           margin-left: 90px;
+        }
+        #submit{
+            width: 100px;
+        }
+        form h1{
+            text-align: center;
+            margin-left: 90px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="signup">
+            <form onsubmit="signup(event)" id="signup-form" action="">
+                <h1>signup</h1>
+               <input type="text" id="name" placeholder="Name"/>
+               <input type="email" id="email" placeholder="Email"/>
+                <input type="password" id="password" placeholder="Password"/>
+                <input type="text" id="username" placeholder="Username"/>
+                <input type="number" id="mobile" placeholder="Mobile No"/>
+                <input type="text" id="description" placeholder="Description"/>
+                <input id="submit" type="submit"/>
+             </form>
+        </div>
+    </div>
+    <script src="script2.js"> </script>
+</body>
+</html>
