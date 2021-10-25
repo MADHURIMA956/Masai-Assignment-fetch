@@ -13,11 +13,251 @@ img{
     cursor: pointer;
 }
 
-#hamburger{
+.nav-left .hamburger{
     width: 25px;
     height: 20px;
+    margin-right: 25px;
 }
-#utubeimg{
+.nav-left #utubeimg{
     width: 100px;
     height: 25px;
+}
+.flexdiv{
+    display: flex;
+    align-items: center;
+}
+nav{
+    width: 100%;
+    padding: 15px 2%;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+.nav-right img{
+    width: 25px;
+    margin-right: 25px;
+}
+.nav-right i{
+    cursor: pointer;
+    font-size: 25px;
+    margin-right: 25px;
+}
+.nav-right .userIcon{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 0;
+}
+.nav-middle .mic-icon{
+    width: 30px;
+}
+.nav-middle .searchIcon{
+    width: 20px;
+}
+.nav-middle .search-box{
+    border: 1px solid #ccc;
+    margin-right: 15px;
+    padding: 8px 12px ;
+}
+.nav-middle .search-box input{
+    width: 400px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+/* signup sign  in */
+
+.pop-main{
+    height: 100%;
+    position: fixed;
+    right: 6%;
+    top: 0;
+    width: 280px;
+    background-color: whitesmoke;
+    /* display: none; */
+}
+
+.pop-main a{
+    display: flex;
+    padding: 15px 10px ;
+}
+.pop-main a img{
+    width: 50px;
+  border-radius: 50%;
+}
+.pop-main hr{
+    width: 90%;
+    margin: 0 15px;
+    background-color: black;
+}
+.pop-main a img{
+    width: 10%;
+}
+.pop-main .hover:hover{
+    background-color: rgb(212, 208, 208);
+}
+.popSign{
+   display: block;
+}
+
+
+/* side bar  */
+
+.sidebar{
+    
+    background: white;
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    padding-top: 80px;
+}
+.sortcut-link a img{
+    width: 25px;
+    margin-right: 20px;
+}
+.sortcut-link a{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 12px;
+    padding-top:10px;
+    padding-bottom:10px;
+    flex-wrap: wrap;
+}
+.sortcut-link a .showmore{
+    display: none;
+}
+
+.sortcut-link a:first-child{
+    color: red;
+}
+
+.sidebar hr{
+   margin-bottom: 15px;
+    width: 100%;
+}
+
+
+.subscribe-list h3{
+font-size: 13px;
+padding: 10px;
+color: red;
+}
+.subscribe-list a{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 12px;
+    padding-top:10px;
+    padding-bottom:10px;
+    flex-wrap: wrap;
+}
+.sortcut-link a:hover{
+    background-color: rgb(212, 208, 208);
+}
+.subscribe-list img{
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.subscribe-list a:hover{
+    background-color: rgb(212, 208, 208);
+}
+.smallSidebar{
+    width: 5%;
+
+}
+.smallSidebar a p{
+   font-size: 12px;
+   padding: 8px 0px;
+} 
+.smallSidebar a .showmore{
+    display: block;
+}
+.smallSidebar a .notdisplay{
+    display: none;
+}
+.smallSidebar .subscribe-list{
+    display: none; 
+}
+.smallSidebar h3{
+    display: none;
+} 
+.smallSidebar hr{
+    display: none;
+} 
+
+
+/* main */
+
+.container{
+    background: #f9f9f9;
+    padding-left: 20px 2% 20px 17%;
+    margin-top: 10%;
+}
+.banner{
+    width: 100%;
+    background-image: url("https://www.gstatic.com/youtube/img/promos/growth/a401382c00a66a52c6f1926f784758e2236b11e353e2783daac7a69a589d80f3_2560x520.png" );
+    height:20%;
+    background-size: cover;
+}
+
+.banner .imageover{
+    width: 40%;
+    margin-top: 2%;
+    margin-left: 18%;
+   background: transparent
+   
+}
+.banner .btn_learnMore{
+    border: 1px solid blue;
+    color: blue;
+    background-color: white;
+    margin-top: 50px;
+    margin-left: 18%;
+    margin-bottom: 10%;
+    padding: 12px;
+    border-radius: 5px;
+}
+/* main top div */
+
+#btn_div{
+    border: 0;
+    position:fixed;
+    width: 100%;
+    top:11%;
+    left:15%;
+    z-index: 1;
+    padding: 15px 20px;
+    background-color: white;
+}
+.btn_upper{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    margin: 5px 5px;
+ }
+.smallSidebar #btn_div{
+    position:sticky;
+    width: 100%;
+    top:11%;
+   
+}
+
+/* main div */
+
+.main_div{
+    position: relative;
+    width: 100%;
+    left: 11%;
+    top: 11%;
+    z-index: 1;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4,15%);
+   justify-content: space-evenly;
 }
