@@ -6,23 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- <title><img style="width:10px ;height: 20px;" src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Emblem.png" alt="">-->
    <title>You Tube</title> 
+   <script src="https://kit.fontawesome.com/c5df6b2bbe.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     
-    <nav>
-        <div class="nav-left">
-            <img id="hamburger" src="https://img.icons8.com/material-outlined/24/000000/menu--v3.png" alt="">
+<!----------------- nav bar -------------->
+
+    <nav class="flexdiv">
+        <div class="nav-left flexdiv">
+            <img class="hamburger" src="https://img.icons8.com/material-outlined/24/000000/menu--v3.png" alt="">
             <img id="utubeimg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png" alt="">
         </div>
-        <div class="nav-middle"></div>
-        <div class="nav-right">
-            <img  class="vdoIcon" src="https://img.icons8.com/ios/25/000000/video-call.png"/>
+        <div class="nav-middle flexdiv">
+            <div class="search-box flexdiv">
+                <input onclick="searchVideos()" id="query" type="text" placeholder="Search">
+                <img class="searchIcon" src="https://cdn.iconscout.com/icon/free/png-256/search-1399-475061.png" alt="">
+            </div>
+            <img class="mic-icon" src="https://i.pinimg.com/originals/ea/5f/5b/ea5f5bd3b4110f2afb958049b4096d3a.png" alt="">
+        </div>
+        <div class="nav-right flexdiv">
+            <img src="https://img.icons8.com/ios/25/000000/video-call.png"/>
           
-            <img  class="vdoIcon" src="  https://p.kindpng.com/picc/s/179-1799598_png-icon-free-download-clipart-transparent-download-post.png"/>
+            <i class="fa fa-th" aria-hidden="true"></i>
+            <i class="fa fa-bell-o" aria-hidden="true"></i>
+           <div > <img class="userIcon"  src="https://us.123rf.com/450wm/fizkes/fizkes2007/fizkes200701872/152319944-close-up-headshot-portrait-of-smiling-vietnamese-young-woman-look-at-camera-talk-on-video-call-profi.jpg?ver=6"/>
+            <div class="pop-main">
+                <a  href=""><img src="https://us.123rf.com/450wm/fizkes/fizkes2007/fizkes200701872/152319944-close-up-headshot-portrait-of-smiling-vietnamese-young-woman-look-at-camera-talk-on-video-call-profi.jpg?ver=6" alt=""><div><p>Jenny Neailson</p><p>Jenny2@gmail.com</p></div></a>
+                <hr>
+                <a class="hover" href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Home-icon.svg/1200px-Home-icon.svg.png" alt=""><p>Create a channel</p> </a>
+                <a class="hover" href=""><img src="https://cdn.iconscout.com/icon/free/png-256/explore-1781524-1513844.png" alt=""><p>Purchases and memberships</p></a>
+                <a class="hover" href=""><img src="https://image.pngaaa.com/675/4792675-middle.png" alt=""><p>YouTube Studio</p></a>
+                <hr>
+                <a class="hover" href=""><img src="https://cdn.iconscout.com/icon/free/png-256/video-library-1781676-1518357.png" alt=""><p>Switch account</p></a>
+                <a class="hover" href="signIn.html"><img class="notdisplay" src="https://www.pngitem.com/pimgs/m/257-2577930_history-icon-png-browsing-history-icon-png-transparent.png" alt=""><p  class="notdisplay">Sign In</p></a>
+                <a  class="hover" href="signUp.html"><img class="notdisplay" src="https://cdn.iconscout.com/icon/free/png-256/watch-later-1781603-1513853.png" alt=""><p class="notdisplay">Sign Up</p></a>
+                <a class="hover" href=""><img class="notdisplay" src="https://png.pngitem.com/pimgs/s/129-1293150_file-like-svg-wikimedia-commons-png-youtube-blue.png" alt=""><p class="notdisplay">Help</p></a>
+            </div>
+            
+        </div>
         </div>
     </nav>
+<!----------------- side bar -------------->
 
+    <div class="sidebar">
+        <div class="sortcut-link">
+            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Home-icon.svg/1200px-Home-icon.svg.png" alt=""><p>Home</p> </a>
+            <a href=""><img src="https://cdn.iconscout.com/icon/free/png-256/explore-1781524-1513844.png" alt=""><p>Explore</p></a>
+            <a href=""><img src="https://image.pngaaa.com/675/4792675-middle.png" alt=""><p>Subscription</p></a>
+            <hr>
+            <a href=""><img src="https://cdn.iconscout.com/icon/free/png-256/video-library-1781676-1518357.png" alt=""><p>Library</p></a>
+            <a href=""><img class="notdisplay" src="https://www.pngitem.com/pimgs/m/257-2577930_history-icon-png-browsing-history-icon-png-transparent.png" alt=""><p  class="notdisplay">History</p></a>
+            <a href=""><img class="notdisplay" src="https://cdn.iconscout.com/icon/free/png-256/watch-later-1781603-1513853.png" alt=""><p class="notdisplay">Watch later</p></a>
+            <a href=""><img class="notdisplay" src="https://png.pngitem.com/pimgs/s/129-1293150_file-like-svg-wikimedia-commons-png-youtube-blue.png" alt=""><p class="notdisplay">Like videos</p></a>
+            <a href=""><img class="showmore" src="https://cdn.icon-icons.com/icons2/1904/PNG/512/downarrow_121316.png" alt=""><p class="showmore">show more</p></a>
+        </div>
+        <hr>
+        <div class="subscribe-list">
+            <h3>SUBSCRIBE</h3>
+            <a href=""><img src="https://us.123rf.com/450wm/fizkes/fizkes2007/fizkes200701872/152319944-close-up-headshot-portrait-of-smiling-vietnamese-young-woman-look-at-camera-talk-on-video-call-profi.jpg?ver=6" alt=""><p>Jenny Nichole</p></a>
+            <a href=""><img src="https://us.123rf.com/450wm/fizkes/fizkes2007/fizkes200701872/152319944-close-up-headshot-portrait-of-smiling-vietnamese-young-woman-look-at-camera-talk-on-video-call-profi.jpg?ver=6" alt=""><p>Rose Nichole</p></a>
+            <a href=""><img src="https://us.123rf.com/450wm/fizkes/fizkes2007/fizkes200701872/152319944-close-up-headshot-portrait-of-smiling-vietnamese-young-woman-look-at-camera-talk-on-video-call-profi.jpg?ver=6" alt=""><p>Nehal Nichole</p></a>
+        </div>
+    </div>
 
+    <!----------------- main ----------------->
+    <div class="main_top">
+        <div id="btn_div">
+            <button class="btn_upper">All</button>
+            <button class="btn_upper">Popular</button>
+            <button class="btn_upper">Trending</button class="btn_upper">
+            <button class="btn_upper">Live</button>
+            <button class="btn_upper">Music</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="banner">
+           
+            <img class="imageover" src="https://www.gstatic.com/youtube/img/promos/growth/864dc47e45a7a0b06602f73155980de282b939a6d0adc7bdcda231f965bf796a_640x48.png" alt="">
+         
+           <div><button class="btn_learnMore">1 MONTH FREE</button></div> 
+        </div>
+        <div class="main_div"></div>
+    </div>
+    <script src="script.js"> </script>
 </body>
 </html>
