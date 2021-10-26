@@ -27,60 +27,79 @@ spop.onclick = function(){
 
 //  main container
 
+let parent = document.getElementById('main_div')
 
-// let parent = document.getElementById('main_div')
+  async function showVideos(){
 
-//   async function showVideos(){
+    try{
+        let res = await fetch('https://youtube.googleapis.com/youtube/v3/search?type=video&key=AIzaSyDdzweW9-us5ypGorA2oGp-0y8j7bPPuIs&maxResults=20&safeSearch=strict&videoCaption=closedCaption&part=snippet&chart=mostPopular&regionCode=IN')
 
-//     try{
-//         let res = await fetch('')
+        console.log(res);
+        let data = await res.json();
 
-//         console.log(res);
-//         let data = await res.json();
+        console.log(data.items);
+        appendVideos(data.items);
 
-//         console.log(data.items);
-//         appendVideos(data.items);
-
-//     }catch(e){
-//         console.log("Got an error" , e)
-//     }
+    }catch(e){
+        console.log("Got an error" , e)
+    }
 
   
-//   }
-//   showVideos();
+  }
+  showVideos();
    
-//     function  appendVideos(data){
-//         //parent.innerHTML = null;
+    function  appendVideos(video_data){
+        parent.innerHTML = null;
 
-//         data.forEach( ({ 
-//             id:{ videoId },
-//             snippet:{ title ,channelTitle },
-//             })=>{
-//             //console.log(videoId);
+        video_data.forEach( ({ 
+            id:{ videoId },
+            snippet:{ title ,channelTitle },
+            })=>{
+            //console.log(videoId);
 
-//             let div = document.createElement("div");
-//             div.setAttribute('class','vdoApi_div')
+            let div = document.createElement("div");
+            div.setAttribute('class','vdoApi_div')
 
-//             let inner_div = document.createElement("div");
-//             inner_div.innerText =`<iframe width="50px" height="100px" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            let inner_div = document.createElement("div");
+            inner_div.innerText =`<iframe width="50px" height="100px" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
-//            let outer_div = document.createElement('div');
-//            outer_div.setAttribute('class','text_part');
+            let titleWrapper = document.createElement("div");
+            titleWrapper.setAttribute("class", "titleWrapper");
 
-//            let p = document.createElement('p');
-//            p.innerText = title;
 
-//            let child_title = document.createElement('p');
-//            child_title .innerText = channelTitle;
+            let div_title = document.createElement("div");
+            div_title.setAttribute('class','vdoApi_title')
 
-//            outer_div.append(p,child_title);
-//            div.append(inner_div,outer_div);
 
-//            parent.append(div)
             
-//         });
+            let title1 = document.createElement('p');
+            title1.innerText =title;
+            
+          
 
-//     }
+            let channelTitle_div = document.createElement('p')
+            channelTitle_div.setAttribute("class", "channel_titleDiv");
+
+            let channelTitle1 = document.createElement('p')
+            channelTitle1.innerText = channelTitle;
+
+            let img = document.createElement('img');
+            img.src = "https://img.icons8.com/ios-glyphs/20/000000/checked--v1.png"
+
+            div_title.append(title1);
+            console.log(title ,channelTitle)
+
+            channelTitle_div.append(channelTitle1,img);
+
+            titleWrapper.append(div_title, channel_titleDiv);
+
+            div.append(inner_div,titleWrapper);
+
+            parent.append(div)
+            
+        });
+
+    }
 
 
    
@@ -90,13 +109,13 @@ let videos = document.getElementById('main_div')
 
         let query = document.getElementById('query').value
         try{
-            let res = await fetch(`${query}`)
+            let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key={}&maxResults=20`)
 
             let data = await res.json();
 
             console.log(data);
             appendVideos(data.items)
-        }catch(e){
+        }catch{
             console.log(e)
         }
     }
@@ -122,14 +141,4 @@ let videos = document.getElementById('main_div')
 
         // 
     }
-
-
-
-
-
-
-
-
-
-
 
