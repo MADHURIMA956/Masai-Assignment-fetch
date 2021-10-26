@@ -168,7 +168,7 @@ color: red;
     background-color: rgb(212, 208, 208);
 }
 .smallSidebar{
-    width: 5%;
+    width: 10%;
 
 }
 .smallSidebar a p{
@@ -229,11 +229,15 @@ color: red;
     border: 0;
     position:fixed;
     width: 100%;
-    top:11%;
-    left:15%;
+    top:10%;
+    left:10%;
     z-index: 1;
-    padding: 15px 20px;
+    padding: 15px 100px;
     background-color: white;
+}
+#btn_div button:hover{
+    cursor: pointer;
+    background-color: rgb(156, 148, 148);
 }
 .btn_upper{
     padding: 10px 20px;
@@ -249,9 +253,11 @@ color: red;
 }
 
 /* main div */
-
-.main_div{
-    position: relative;
+/* .main_cont{
+    width: 100%;
+} */
+#main_div{
+  
     width: 100%;
     left: 11%;
     top: 11%;
