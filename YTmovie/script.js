@@ -33,7 +33,7 @@ spop.onclick = function(){
 //   async function showVideos(){
 
 //     try{
-//         let res = await fetch('https://youtube.googleapis.com/youtube/v3/search?type=video&key=AIzaSyDdzweW9-us5ypGorA2oGp-0y8j7bPPuIs&maxResults=20&safeSearch=strict&videoCaption=closedCaption&part=snippet&chart=mostPopular&regionCode=IN')
+//         let res = await fetch('')
 
 //         console.log(res);
 //         let data = await res.json();
@@ -90,7 +90,7 @@ let videos = document.getElementById('main_div')
 
         let query = document.getElementById('query').value
         try{
-            let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyDdzweW9-us5ypGorA2oGp-0y8j7bPPuIs&maxResults=20`)
+            let res = await fetch(`${query}`)
 
             let data = await res.json();
 
