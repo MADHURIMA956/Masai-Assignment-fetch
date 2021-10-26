@@ -6,12 +6,20 @@ menuIcon.onclick = function(){
 }
 
 // signin signup popup
-
+let clicked = false;
 let spop = document.querySelector('.userIcon');
-let sidebarpop = document.querySelector('.pop-main')
+let sidebarpop = document.getElementById('pop-main')
+
 
 spop.onclick = function(){
-    sidebar.classList.toggle("popSign"); 
+    if(clicked === false){
+        sidebarpop.style.display = "block";
+        clicked = true;
+    }else {
+        sidebarpop.style.display = "none";
+        clicked = false;
+    }
+  
 }
 
 
