@@ -1,51 +1,89 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-           form{
-            width: 10%;
-        }
-        input{
-            margin: 15%;
-            width: 250px;
-            height: 30px;
-        }
-        body{
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sign In</title>
+	<style>
+        *{
+            text-align: center;
+            justify-content: center;
+            color: black;
+            font-family: 'Roboto', sans-serif;
             background-color: white;
         }
-        #login{
-            background-color: red;
-            max-width: 900px;
-            min-height: 400px;
-            margin: 100px 300px;
-            padding-left: 250px;
-            padding-top: 40px;
+        .head{
+            width: 100%;
+            height: 56px;
+          
+            margin: auto;
+        }
+        .head a img{
+            width: 120px;
+            height: 30px;
+            margin: 15px 0;
+        }
+        #user, #pass{
+            width: 300px;
+            padding: 16px;
+            border-radius: 5px;
+            margin: 10px;
+            border:1px solid rgb(164,167,170)
+        }
+
+        #signup, #submit{
+            margin: 10px;
+            border-radius: 10px;
+            width: 340px;
+            padding: 16px 60px;
+            
         }
         #submit{
-            width: 100px;
-        }
-        form h1{
+            color: white;
+            font-size: 16px;
+            background-color: red;
             text-align: center;
-            margin-left: 90px;
+            border: 1px solid rgb(164,167,170);
         }
+        #submit:hover{
+            background-color: red
+        }
+       #change_text{
+           text-decoration: none;
+           color: black;
+       }
+       #change_text:hover{
+          color: rgb(75, 73, 73);  
+       }
+     
     </style>
 </head>
 <body>
-    <div>
-        <div id="login">
-            <form onsubmit="login(event)" id="login_form" action="">
-                <h1>LogIn</h1>
-                <input type="text" id="user" placeholder="Username"/>
-                <input type="password" id="pass" placeholder="Password"/>
-                <input id="submit" type="submit"/>
-            </form>
+	<header class="head">
+		<a href="youTube.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"></a> 
+	 </header>
+	
+	 <form onsubmit="login(event)" id="login_form" action="">
+		<h3>Sign in to your You Tube account</h3>
+		<div class = "clr">
+            <input type="text" id="user" placeholder="Username"/>
+		 </div>  
+		 <div>
+            <input type="password" id="pass" placeholder="Password"/>
+        </div>  
 
-        </div>
-    </div>
-    <script src="script2.js"> </script>
+		<div class="pass-link"><a href="#">Forgot passward</a></div>
+        <div>
+
+            <input id="submit" type="submit"/>
+
+		
+			<p>Don't have an account?</p>
+            <button ><b><a id="change_text" href="signUp.html"> Create account</a></b></button>
+</form>
+<script src="script2.js"> </script>
 </body>
 </html>
