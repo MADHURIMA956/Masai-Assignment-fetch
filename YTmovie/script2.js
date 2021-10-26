@@ -5,6 +5,7 @@
 
     
     
+    
     function signup(e) {
         e.preventDefault();
 
@@ -22,7 +23,7 @@
 
         user_data = JSON.stringify(user_data);
 
-        fetch("" ,{
+        fetch("https://masai-api-mocker.herokuapp.com/auth/register" ,{
             method : 'POST',
             body:user_data,
             headers:{
@@ -63,7 +64,7 @@ function login(e) {
  let data_to_send = JSON.stringify(user_data);
  //console.log(data_to_send)
 
- fetch("",{
+ fetch("https://masai-api-mocker.herokuapp.com/auth/login",{
     
     method:'POST',
     body: data_to_send,
@@ -88,7 +89,7 @@ function login(e) {
 
 
 function fetchmyData(username,token) {
-    fetch(`${username}`,{
+    fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`,{
     
     headers:{
             'Content-Type' : 'application/json',
