@@ -36,6 +36,8 @@
         })
         .then((res)=>{
            console.log(res)
+           alert(` You successfully created your You Tube account`);
+           window.location.href = 'signIn.html'
         })
         .catch((err)=>{
             console.log(err)
@@ -77,6 +79,7 @@ function login(e) {
     .then((res)=>{
        console.log(res);
        fetchmyData(user_data.username,res.token);
+       window.location.href = "youTube.html"
     })
     .catch((err)=>{
         console.log(err)
@@ -99,6 +102,8 @@ function fetchmyData(username,token) {
     })
     .then((res)=>{
        console.log(res)
+       alert(` logged In successfully to your YouTube account`);
+       window.location.href = 'youTube.html';
     })
     .catch((err)=>{
         console.log(err)
