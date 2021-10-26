@@ -4,7 +4,6 @@
     // sign up
 
     
-    //https://github.com/masai-school/api-mocker/wiki/Authentication-API --link
     
     function signup(e) {
         e.preventDefault();
@@ -23,7 +22,7 @@
 
         user_data = JSON.stringify(user_data);
 
-        fetch("https://masai-api-mocker.herokuapp.com/auth/register" ,{
+        fetch("" ,{
             method : 'POST',
             body:user_data,
             headers:{
@@ -64,7 +63,7 @@ function login(e) {
  let data_to_send = JSON.stringify(user_data);
  //console.log(data_to_send)
 
- fetch("https://masai-api-mocker.herokuapp.com/auth/login",{
+ fetch("",{
     
     method:'POST',
     body: data_to_send,
@@ -89,7 +88,7 @@ function login(e) {
 
 
 function fetchmyData(username,token) {
-    fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`,{
+    fetch(`${username}`,{
     
     headers:{
             'Content-Type' : 'application/json',
