@@ -39,7 +39,7 @@ async function getMovieDetails(){
 
      let movie = document.getElementById("movie").value ;
 
-    let res = await fetch(`https://www.omdbapi.com/?T=${movie}&apikey=fa8fc925`);
+    let res = await fetch(`${movie}`);
 
     let data = await res.json();
     console.log(data) ;
@@ -70,3 +70,11 @@ function showMovieDetails(moviedetail){
 }
 
 </script>
+
+
+
+
+
+
+
+
