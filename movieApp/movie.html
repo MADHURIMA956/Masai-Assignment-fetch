@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie-Sraech</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c5df6b2bbe.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    
+
+    <div id="nav">
+        <div><h1>Movie Treasures</h1></div>
+        <div><input type="text" id="movie" placeholder="Search for Movie details">
+            <button id="searchbtn" onclick="getMovieDetails()" >Get Movie Details</button>
+        </div>
+        <div><a href="movie.html"><button class="nav_btn"> Home</button></a></div>
+       
+        <div><a href="signIn.html"><button class="nav_btn">Log-in</button></a></div>
+        <div><a href="signUp.html"><button class="nav_btn">Sign-up</button></a></div>
+    </div>
+
+    <div id="data"></div>
+
+<!-- slide show -->
+
+
+    <div id="maindiv" >
+		<div class="all_slider">
+			<div class="slider active">
+				<img  src="https://shifu.hotstarext.com/SOURCE/VOD/cd-2021-10-22/deskspops-17cce89e-9600-4df7-9a8a-08a4c7f5fd35.jpg" alt="">
+			</div>
+			<div class="slider">
+				<img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/8856/1068856-h-bd59b75b1b39" alt="">
+			</div>
+			<div class="slider">
+				<img src= "https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/6878/1036878-h-3da0d7e00398" alt="">
+			</div>
+			<button onclick="prev()" id="prev" class="prev"><i class="fas fa-chevron-left"></i></button>
+			<button onclick="next()" id="next"  class="next"><i class="fas fa-chevron-right"></i></button>
+		</div>
+        
+     </div>
+
+     <div id="movie_Data"></div>
+
+
+    <script src="script.js"> </script>
+</body>
+</html>
+
