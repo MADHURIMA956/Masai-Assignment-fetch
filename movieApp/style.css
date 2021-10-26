@@ -1,0 +1,134 @@
+
+/* nav bar */
+
+input{
+    width: 300px;
+    padding: 10px;
+} 
+
+button{
+ padding: 10px;
+ background-color: yellow;
+ color: black;
+ width: 238px;
+}
+#searchbtn{
+width: 150px;
+}
+#btn_style{
+ padding: 10px;
+}
+#nav{
+display: flex;
+background-color: black;
+position:fixed;
+z-index: 1;
+top: 0;
+width: 100%;
+}
+#nav > div {
+flex-direction: row;
+}
+#nav > div:nth-child(1) {
+padding-left: 10px;
+}
+#nav > div:nth-child(2) {
+flex-grow: 1;
+margin-top: 20px;
+margin-left: 10%;
+
+}
+.nav_btn{
+padding: 10px;
+ background-color: yellow;
+ color: black;
+ width: 100px;
+ margin-right: 10px;
+ margin-top: 20px;
+}
+h1{
+ color: yellow;
+}
+#data{
+position: absolute;
+border:  grey;
+ top:200px;
+ margin-left: 30% ;
+box-shadow: grey;
+}
+img{
+ width: 100%;
+}
+h2{
+ text-align: center;
+ background-color: wheat;
+}
+#data > div {
+ padding: 20px;
+}
+
+/* slide show */
+
+
+#maindiv{
+    color: black;
+    margin: 270px; 
+    height: 20px;
+}
+#all_slider{
+        position: relative; 
+        left: 0px;
+        right: 0px;
+        width: 100%;
+    } 
+    .slider img{
+        height: 400px;
+    }
+      .slider{
+        position: absolute;
+        top:100px;
+        left: 30px;
+        right:30px;
+        visibility: hidden;
+        transition: 0.5s;
+        opacity: 0;
+    }
+     .active{
+        opacity: 1;
+        visibility: visible;
+    
+    }  
+    .prev{
+        position: absolute;
+        left: 0;
+        top: 15rem;
+        border: none;
+        background-color: transparent;
+        color: rgb(26, 24, 24);
+        font-size: 46px;
+        padding: 16px 21px;
+        border-radius: 1000px;
+        transition: 0.5s;
+        outline: none;
+        
+    }
+    .prev:hover{
+        opacity: 1;
+    }
+    .next{
+        position: absolute;
+        right: 0;
+        top: 15rem;
+        border: none;
+        background-color: transparent;
+        color:  rgb(26, 24, 24);
+        font-size: 46px;
+        padding: 16px 21px;
+        border-radius: 1000px;
+        transition: 0.5s;
+        outline: none;
+        opacity: 0.6;
+    }
+    .next:hover{
+        opacity: 1;
+    }
