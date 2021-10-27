@@ -4,8 +4,6 @@
     // sign up
 
     
-    
-    
     function signup(e) {
         e.preventDefault();
 
@@ -17,7 +15,7 @@
             password : form.password.value,
             username : form.username.value,
             mobile : form.mobile.value,
-            
+            description : form.description.value,
         };
         console.log( user_data);
 
