@@ -1,3 +1,13 @@
+// here in this mini project I used youtube Api link, but As I submitted this project into public Github repository so that I can't provide My Api key if U want to check My project to feel free and ask me for my Api Key 
+
+
+
+
+
+
+
+// sideBar
+
 let menuIcon = document.querySelector('.hamburger') ; //add class hamburger class name
 let sidebar = document.querySelector('.sidebar') ;  //add class sidebar class name
 
