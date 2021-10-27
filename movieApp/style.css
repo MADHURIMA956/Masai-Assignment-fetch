@@ -135,6 +135,13 @@ h2{
         opacity: 1;
     }
 
+    /* search data */
+    
+    #data div{
+        background-color: honeydew;
+
+    }
+
 
     /* movie data */
 
