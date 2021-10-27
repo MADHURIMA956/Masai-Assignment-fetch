@@ -121,11 +121,12 @@ let movie_Id = document.getElementById("movie_Data");
 async function getMovieData(){
 
     try{
-        let res = await fetch(` http://www.omdbapi.com/?i=tt3896198&apikey={}`);
+        let res = await fetch(`https://api.themoviedb.org/4/list/1?api_key={}`);
 
+  
         let data = await res.json();
-        console.log(data)
-        showWholeMovie_data(data)
+        console.log(data.results)
+        showWholeMovie_data(data.results)
     }catch(e){
         console.log(e);
     }
@@ -139,15 +140,20 @@ function showWholeMovie_data(movie){
         let div = document.createElement('div');
 
         let img = document.createElement('img');
-        img.src = m.logo_path;
+        img.src = m.backdrop_path;
+       
+        let vote_average = document.createElement('p');
+        vote_average.textContent = m.vote_average;
+        
+        let title = document.createElement('h3');
+        title.textContent = m.title;
+        console.log(title)
 
-        let name = document.createElement('p');
-        name.src = m.name;
+        let release_date = document.createElement('p');
+        release_date.textContent = m.release_date;
 
-        let country = document.createElement('p');
-        country.src = m.origin_country;
 
-        div.append(img,name,country);
+        div.append(img,title,vote_average,release_date);
         movie_Id.append(div)
 
     })
